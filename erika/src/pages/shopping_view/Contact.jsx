@@ -56,7 +56,7 @@ const onSubmit = async (event) => {
       <div className='container px-4 mx=4'>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 '>
           {
-            contact_us.map((item) => <motion.Card
+            contact_us.map((item) => <Card
             variants={fadeIn("left", 0.2)}
             initial="hidden"
             whileInView={"show"}
@@ -70,7 +70,7 @@ const onSubmit = async (event) => {
                </CardContent>
 
 
-            </motion.Card>)
+            </Card>)
           }
 
         </div>
@@ -81,7 +81,7 @@ const onSubmit = async (event) => {
 
     <section className="py-15 bg-grey-50 mx-5">
   <div className="container py-8">
-    <motion.div
+    <div
      variants={fadeIn("right", 0.2)}
      initial="hidden"
      whileInView={"show"}
@@ -171,11 +171,11 @@ const onSubmit = async (event) => {
 
         
       </form>
-    </motion.div>
+    </div>
   </div>
 </section>
 <section className="py-15 bg-grey-50 mx-5">
-  <motion.div 
+  <div 
    variants={fadeIn("right", 0.2)}
    initial="hidden"
    whileInView={"show"}
@@ -194,7 +194,7 @@ const onSubmit = async (event) => {
      />
       
     </div>
-  </motion.div>
+  </div>
 </section>
 
       

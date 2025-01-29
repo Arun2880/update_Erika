@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import about from "../../assets/erikabannner.jpg";
-import about2 from "../../assets/about13.png";
+import about from "../../assets/ran 01.jpg";
+import about2 from "../../assets/shampoo-01.jpg";
 import about3 from "../../assets/bna 01.png";
 import about4 from "../../assets/an 2.jpg";
 import about5 from "../../assets/bna03.png";
@@ -127,28 +127,27 @@ const About = () => {
   }, []);
 
   return (
- <div className="overflow-hidden">
     <div className="flex flex-col min-h-screen ">
       <div className="relative w-full h-[auto] lg:h-[500px] overflow-hidden  bg-no-repeat bg-center">
         <img src={about} alt="" className="w-full h-full object-cover " />
       </div>
 
-      <div className="flex lg:flex-row flex-col justify-center align-items-center mt-5 pt-6 mb-5 pb-6">
-        <motion.div
+      <div className="flex lg:flex-row flex-col justify-center align-items-center mt-5 pt-6 mb-5 pb-6 px-3">
+        <div
           variants={fadeIn("left", 0.2)}
           initial="hidden"
           whileInView={"show"}
           viewport={{ once: false, amount: 0.7 }}
-          className="mx-5 flex-auto  mt-6 justify-center "
+          className=" flex-auto  mt-6 justify-center p-5"
         >
-          <img src={about2} alt="" className="bg-contain w-[90%] mx-auto" />
-        </motion.div>
-        <motion.div
+          <img src={about2} alt="" className="bg-contain w-[90%] mx-auto rounded-lg" />
+        </div>
+        <div
           variants={fadeIn("right", 0.2)}
           initial="hidden"
           whileInView={"show"}
           viewport={{ once: false, amount: 0.7 }}
-          className="mx-5 flex-auto  mt-6"
+          className="flex-auto  mt-6"
         >
           <h1 className="text-3xl font-bold font-serif">About Us</h1>
           <p className="mt-8 font-serif">
@@ -179,7 +178,7 @@ const About = () => {
             beauty solutions that are not only effective but also
             environmentally friendly and sustainable.
           </p>
-        </motion.div>
+        </div>
       </div>
       <div className="relative w-full  mx-auto">
         <div
@@ -219,13 +218,13 @@ const About = () => {
         <h2 className="text-3xl font-bold mt-5 justify-center text-center">
           Why Choose Us
         </h2>
-        <motion.div className="flex lg:flex-row flex-col gap-6">
-          <motion.div
+        <div className="flex lg:flex-row flex-col gap-6">
+          <div
             variants={flip}
             initial="initial"
             whileInView={"animate"}
             exit="exit"
-            className="flex-auto mt-6 lg:w-1/2 sm:w-full rounded-2xl bg-violet-400 px-4 py-6 shadow-2xl"
+            className="flex-auto mt-6 lg:w-1/2 sm:w-full rounded-2xl bg-green-200 px-4 py-6 shadow-2xl transition-all duration-300 hover:bg-green-500 hover:shadow-3xl hover:scale-105"
           >
             <h2 className="text-2xl font-md">
               Inspiring Confidence through Natural Beauty
@@ -237,13 +236,13 @@ const About = () => {
               and innovation, we redefine beauty standards and foster a sense of
               confidence in our users.
             </p>
-          </motion.div>
-          <motion.div
+          </div>
+          <div
             variants={flip}
             initial="initial"
             whileInView={"animate"}
             exit="exit"
-            className=" flex-auto mt-6 lg:w-1/2 sm:w-full rounded-2xl bg-violet-300 px-4 py-6 shadow-2xl"
+            className=" flex-auto mt-6 lg:w-1/2 sm:w-full rounded-2xl bg-green-200 px-4 py-6 shadow-2xl transition-all duration-300 hover:bg-green-500 hover:shadow-3xl hover:scale-105"
           >
             <h2 className="text-2xl font-md">
               Cultivating Excellence & Efficiency
@@ -257,14 +256,14 @@ const About = () => {
               efficiency. Time is a valuable resource, and maximizing
               productivity is key to achieving our goals effectively.
             </p>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
         <div className="flex lg:flex-row flex-col  gap-6">
-          <motion.div 
+          <div 
         variants={flip}
         initial="initial"
         whileInView={ 'animate'}
-        exit="exit" className=" flex-auto mt-6 lg:w-1/2 sm:w-full rounded-2xl bg-violet-300 px-4 py-6 shadow-2xl">
+        exit="exit" className=" flex-auto mt-6 lg:w-1/2 sm:w-full rounded-2xl bg-green-200 px-4 py-6 shadow-2xl transition-all duration-300 hover:bg-green-500 hover:shadow-3xl hover:scale-105">
             <h2 className="text-2xl font-md">Sustainability Initiatives</h2>
             <p className="mt-8">
               We highlight our commitment to sustainability through eco-friendly
@@ -272,21 +271,23 @@ const About = () => {
               efforts emphasize the natural and ethical aspects of our products,
               appealing to conscientious consumers.
             </p>
-          </motion.div>
-          <motion.div 
-        variants={flip}
-        initial="initial"
-        whileInView={ 'animate'}
-        exit="exit"
-         className="flex-auto mt-6 lg:w-1/2 sm:w-full rounded-2xl bg-violet-400 px-4 py-6 shadow-2xl">
-            <h2 className="text-2xl font-md">Customer Engagement</h2>
-            <p className="mt-8">
-              Our focus on customer engagement involves interactive campaigns,
-              loyalty programs, and personalized experiences. We listen to our
-              customers' feedback and continuously adapt our strategies to meet
-              their evolving needs.
-            </p>
-          </motion.div>
+          </div>
+          <div
+  variants={flip}
+  initial="initial"
+  whileInView="animate"
+  exit="exit"
+  className="flex-auto mt-6 lg:w-1/2 sm:w-full rounded-2xl bg-green-200 px-4 py-6 shadow-2xl transition-all duration-300 hover:bg-green-500 hover:shadow-3xl hover:scale-105"
+>
+  <h2 className="text-2xl font-md">Customer Engagement</h2>
+  <p className="mt-8">
+    Our focus on customer engagement involves interactive campaigns,
+    loyalty programs, and personalized experiences. We listen to our
+    customers' feedback and continuously adapt our strategies to meet
+    their evolving needs.
+  </p>
+</div>
+
         </div>
       </div>
 
@@ -329,9 +330,7 @@ const About = () => {
         </button>
       </div>
     </div>
-        </div>
-  
-  ); 
+  );
 };
 
 export default About;

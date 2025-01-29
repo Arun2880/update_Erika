@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import accimg from "../../assets/accountbn.jpg"
+import accimg from "../../assets/ran 02.jpg"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import Orders from '@/component/shopping_view/orders'
 import Address from '@/component/shopping_view/address'

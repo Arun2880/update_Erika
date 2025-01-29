@@ -30,10 +30,11 @@ const Footer = () => {
           new URLSearchParams(`?category=${getCurrentMenuItem.id}`)
         )
       : navigate(getCurrentMenuItem.path);
+      window.scrollTo(0, 0);
   }
 
   return (
-    <div className="conatainer   bg-white  py-1 px-1 sm:py-7 sm:py-7 ">
+    <div className="conatainer   bg-white py-7 px-7 ">
       <div className="w-[calc(100%_-_32px)] h-auto bg-opacity-10 bg-green-700  mx-4 px-auto lg:justify-between px-10 py-[30px] rounded-2xl">
         <div className="flex flex-col lg:flex-row">
           <div className="w-full lg:w-1/2 flex align-items-center justify-center mt-20">

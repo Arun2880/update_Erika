@@ -10,13 +10,21 @@ const ShoppingProductTile = ({product, handleGetProductDetails, handleAddToCart}
   return (
    <Card 
    
-   className="w-full max-w-sm mx-auto relative group ">
-    <div onClick = {()=>handleGetProductDetails(product?._id)} >
+   className="w-full max-w-sm mx-auto relative group p-3 shadow-xl  transition-all duration-900 border-0 hover:shadow-xl" 
+   style={{
+    boxShadow: '0 10px 15px rgb(224, 224, 224)',
+    transition: 'box-shadow 0.3s',
+    borderRadius: '8px',
+    padding: '16px',
+  }}
+  onMouseOver={(e) => (e.currentTarget.style.boxShadow = '0 15px 20px rgba(29, 226, 12, 0.4)')}
+  onMouseOut={(e) => (e.currentTarget.style.boxShadow = '0 10px 15px rgb(224, 224, 224)')}>
+    <div onClick = {()=>handleGetProductDetails(product?._id)} className='' >
       <div className='relative overflow-hidden'>
           <img
           src={product?.image}
           alt={product?.title}
-          className='w-full h-[300px] object-cover rounded-t-lg transition-transform duration-150 ease-out hover:scale-105 md:ease-in '
+          className='w-full h-[300px] object-cover rounded-lg transition-transform duration-150 ease-out hover:scale-105 md:ease-in hover:rounded-lg '
           />
           {
             product?.totalStock ===0?
@@ -52,7 +60,7 @@ const ShoppingProductTile = ({product, handleGetProductDetails, handleAddToCart}
       </CardContent>
       
       </div>
-      <CardFooter className=" ">
+      <CardFooter className="  ">
         {
           product?.totalStock === 0 ?
           <Button className="w-full bg-black text-white opacity-60 cursor-not-allowed group-hover:opacity-100   opacity-0 transition-opacity duration-500  ">

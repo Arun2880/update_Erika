@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import bannerOne from '../../assets/home.jpg'
+import bannerOne from '../../assets/SERUM1212-02.jpg'
 
 import { Button } from '@/components/ui/button'
 import { Airplay, BabyIcon, ChevronLeftIcon, ChevronRightIcon, CloudLightning, Image, ShieldEllipsis, Shirt, ShirtIcon, ShoppingBasket, UmbrellaIcon, WashingMachine, WatchIcon } from 'lucide-react'
@@ -20,9 +20,10 @@ import icon3 from "../../assets/shampoo.png"
 import icon4 from "../../assets/serum.png"
 import logo from "../../assets/logo erika.png"
 import logo2 from "../../assets/mamta gold logo.png"
+import MarketingBanner from './marketing'
 
 const categoriesWithIcon = [
-  {id: "mehendi", label: "Mehendi" , icon : icon1},
+  {id: "mehendi", label: "Mehendi" , icon : icon1 },
   {id: "harecare", label: "Hair Care", icon: icon2},
   {id: "shampoo", label: "Shampoo" ,icon: icon3},
   {id: "seerum", label: "Seerum" , icon: icon4},
@@ -32,7 +33,7 @@ const categoriesWithIcon = [
 
 const brandsWithIcon= [
   { id:"erika", label: "Erika", icon : logo},
-  { id:"mamta", label: "Mamta Gold", icon : logo2 },
+  // { id:"mamta", label: "Mamta Gold", icon : logo2 },
 ];
 
 
@@ -63,6 +64,7 @@ const Home = () => {
     sessionStorage.setItem('filters', JSON.stringify(currentFilter));
 
     navigate(`/shop/listing`);
+    window.scrollTo(0, 0);
 
   }
 
@@ -123,8 +125,12 @@ const Home = () => {
 
  
   return (
-<div className="overflow-hidden">
+   
     <div className='flex flex-col min-h-screen'>
+       <div className='w-full p-3 bg-[#007000]'> 
+        <marquee><h1 className='text-white font-semibold text-[20px]'> Flash Deals Grab it</h1></marquee>
+
+      </div>
       <div className='relative w-full h-[500px] overflow-hidden '>
       {
           featureImageList && featureImageList.length > 0 
@@ -149,14 +155,14 @@ const Home = () => {
       </div>
 
       <div className='flex flex-col sm:flex-row lg:flex-row mt-[50px]'>
-        <motion.div 
+        <div 
          variants={fadeIn("right", 0.2)}
          initial="hidden"
          whileInView={"show"}
          viewport={{ once: false, amount:0.7 }}
          className='flex flex-col sm:w-full lg:w-1/2 px-5 py-5 '>
          <img src={bannerOne} alt="" className='w-full aspect-square rounded-lg'/>
-        </motion.div>
+        </div>
         <div className='flex flex-col sm:w-full lg:w-1/2 py-7 mx-6 mt-5'>
         <p className='font-serif'>Welcome to</p>
         <h1 className='font-extrabold text-[40px] font-serif '> Sampat Raj & Company - Since 1988</h1>
@@ -167,7 +173,7 @@ const Home = () => {
         In 2024, we expanded our horizons with the establishment of Erika Henna Herbal, a dedicated marketing company under the umbrella of Sampat Raj & Company. Erika Henna Herbal was founded to enhance our market presence and bring our exceptional products closer to our customers worldwide.
         </p>
 
-        <Button className="bg-[#007000] shadow-2xl shadow-green-500 text-white w-1/4 my-10 py-4 font-serif sm:text-[15px] text-[10px]" onClick= {()=>navigate('/shop/about')}> More About</Button>
+        <Button className="bg-[#007000] shadow-2xl shadow-green-500 text-white w-1/4 my-10 py-4 font-serif" onClick= {()=>navigate('/shop/about')}> More About</Button>
         </div>
 
       </div>
@@ -177,13 +183,13 @@ const Home = () => {
 
       <section className='py-12 bg-gray-50 '>
         <div className='container mx-auto px-4 font-serif'>
-          <motion.h2
+          <h2
           variants={fadeIn("left", 0.2)}
           initial="hidden"
           whileInView={"show"}
           viewport={{ once: false, amount:0.7 }}
-           className='text-3xl font-bold text-center mb-8 '>Shop By Category</motion.h2>
-          <motion.div 
+           className='text-3xl font-bold text-center mb-8 '>Shop By Category</h2>
+          <div 
           variants={fadeIn("up", 0.2)}
           initial="hidden"
           whileInView={"show"}
@@ -195,7 +201,9 @@ const Home = () => {
               categoriesWithIcon.map(categoryItem=> 
               <Card  key={categoryItem.id} onClick={()=>handleNavigateToListingPage(categoryItem,'category')} className=" cursur-pointer hover:shadow-lg transition-shadow ">
                 <CardContent className="flex flex-col items-center justify-center p-6">
-                  < img src={categoryItem.icon} className='w-[70px] h-[70px] mb-4 text-primary ' alt=" image.png" />
+                  
+                  <img src={categoryItem.icon} className=' w-[70px] h-[70px] mb-4 ' alt=" image.png" />
+                  
                   <span className='font-bold '>
                     {categoryItem.label}
                   </span>
@@ -204,7 +212,7 @@ const Home = () => {
               </Card>
               )
             }
-          </motion.div>
+          </div>
 
 
         </div>
@@ -213,13 +221,13 @@ const Home = () => {
 
       <section className='py-12 bg-gray-50'>
         <div className='container mx-auto px-4 font-serif'>
-          <motion.h2
+          <h2
           variants={fadeIn("up", 0.2)}
           initial="hidden"
           whileInView={"show"}
           viewport={{ once: false, amount:0.7 }}
-           className='text-3xl font-bold text-center mb-8  '>Shop By Brand</motion.h2>
-          <motion.div
+           className='text-3xl font-bold text-center mb-8  '>Shop By Brand</h2>
+          <div
           variants={fadeIn("left", 0.2)}
           initial="hidden"
           whileInView={"show"}
@@ -229,7 +237,7 @@ const Home = () => {
               brandsWithIcon.map((brandItem)=> 
               <Card onClick={()=>handleNavigateToListingPage(brandItem,'brand')} className=" cursur-pointer hover:shadow-lg transition-shadow ">
                 <CardContent className="flex flex-col items-center justify-center p-6">
-                  < img src={brandItem.icon} className='w-[200px] h-[40px] sm:h-[70px] mb-4 text-primary filter grayscale ' alt='image.png'/>
+                  < img src={brandItem.icon} className='w-[200px] h-[70px] mb-4 text-primary filter grayscale ' alt='image.png'/>
                   <span className='font-bold '>
                     {brandItem.label}
                   </span>
@@ -238,25 +246,36 @@ const Home = () => {
               </Card>
               )
             }
-          </motion.div>
+          </div>
 
 
         </div>
 
       </section>
-
-
+      
       <section className='py-12'>
         <div
         
          className='container mx-auto px-4'>
           
-          <motion.h2
+          <MarketingBanner/>
+         
+
+        </div>
+
+      </section>
+
+      <section className='py-12 '>
+        <div
+        
+         className='container mx-auto px-4 '>
+          
+          <h2
           variants={fadeIn("left", 0.2)}
           initial="hidden"
           whileInView={"show"}
           viewport={{ once: false, amount:0.7 }}
-           className='text-3xl font-bold text-center mb-8 '>Feature Product</motion.h2>
+           className='text-3xl font-bold text-center mb-8 '>Feature Product</h2>
           <div 
           
           className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
@@ -278,7 +297,6 @@ const Home = () => {
       <ProductDetailsDialog open={openDetailsDialog} setOpen={setOpenDetailsDialog }productDetails={productDetails}/>
     
     </div>
-</div>
   )
 }
 
